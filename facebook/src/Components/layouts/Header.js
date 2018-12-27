@@ -25,6 +25,9 @@ const styles = theme => ({
   grow: {
     flexGrow: 1,
   },
+  appBar: {
+    zIndex: theme.zIndex.drawer + 1,
+  },
   menuButton: {
     marginLeft: -12,
     marginRight: 20,
@@ -86,6 +89,7 @@ const styles = theme => ({
       display: 'none',
     },
   },
+  toolbar: theme.mixins.toolbar,
 });
 
 
@@ -167,7 +171,7 @@ class PrimarySearchAppBar extends React.Component {
     
     return (
       <div className={classes.root}>
-        <AppBar position="static">
+        <AppBar position="fixed" className={classes.appBar}>
           <Toolbar>
             <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
               <MenuIcon />
